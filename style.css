@@ -79,7 +79,7 @@ main section#card ul li div.dp {
   margin: 0 auto;
   -ms-flex-line-pack: center;
       align-content: center;
-  background: url("/assets/images/dp.jpg") no-repeat;
+  background: url("assets/images/dp.jpg") no-repeat;
   background-size: contain;
   border-radius: 50%;
   width: 150px;
