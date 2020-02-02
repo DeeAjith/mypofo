@@ -1,6 +1,6 @@
 * {
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all .75s ease;
+  transition: all .75s ease;
 }
 
 body, html {
@@ -87,8 +87,62 @@ body header a #fs-toggle:fullscreen {
     display: grid;
     -ms-grid-columns: 50% auto;
         grid-template-columns: 50% auto;
-        grid-template-areas: "primary card";
+        grid-template-areas: "primary card" "secondary card2";
   }
+}
+
+main section#cardInfo {
+  background-color: #fff;
+  padding: 10px;
+  margin: 1em auto;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 40%;
+}
+
+@media (min-width: 840px) {
+  main section#cardInfo {
+    grid-area: card2;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin: 1em;
+  }
+}
+
+main section#cardInfo ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+main section#cardInfo ul li {
+  font-weight: 450;
+  padding: 5px;
+}
+
+main section#cardInfo ul li a {
+  padding: 5px;
+  margin: 0;
+  text-decoration: none;
+  color: #662600;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  border-radius: 5px;
+  background-color: #ffbf99;
+  -webkit-transition: background-color .32s;
+  transition: background-color .32s;
+}
+
+main section#cardInfo ul li a:hover {
+  color: #ffbf99;
+  background-color: #662600;
+  -webkit-transition: background-color .32s;
+  transition: background-color .32s;
 }
 
 main section#card {
