@@ -43,8 +43,8 @@ body{
         clip-path: polygon(100% 0, 100% 65%, 50% 100%, 0 100%, 0 0);
         background-color: color(primary);
         width:100%;
-        height:100%;
-        position:absolute;
+        height:100vh;
+        position:fixed;
         z-index:-1;
         @include desktop{
             clip-path: polygon(0 0, 77% 0, 60% 100%, 0% 100%);
@@ -57,11 +57,6 @@ body{
         padding:$padding;
         display: block;
         text-transform:uppercase;
-
-        #fs-toggle:fullscreen {
-            background-color: color(primary-dark);
-              
-        }
     }
 }
 
@@ -69,8 +64,9 @@ main{
  
     @include desktop{
         display: grid;
-        grid-template-columns:50% auto;
-        grid-template-areas:"primary card"
+        grid-template-columns:50% 50%;
+        grid-template-areas:
+        "primary card"
         "secondary card2";
     }
     section#cardInfo{
@@ -79,13 +75,12 @@ main{
         margin: 1em auto;
         border-radius:$borders;
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        width:40%;
+        width:auto;
         
         @include desktop{
             grid-area:card2;
-            height:fit-content;
-            align-self: center;
-            margin:1em;
+            align-content: center;
+            margin:0.5em;
         }
         ul{
             list-style-type: none;
@@ -145,14 +140,6 @@ main{
                         height:250px;
                     }
                 }
-                // span{
-                //     position: absolute;;
-                //     width:30px;
-                //     height:30px;
-                //     background-color: color(primary-light);
-                //     border-radius: 50%;
-                //     margin-left: 1.2em;
-                // }
                 strong{
                     display: block;
                     text-align: center;
@@ -168,17 +155,16 @@ main{
         @include desktop{
             grid-area:primary;
             text-align: left;
-            margin: 4em 0 0 4em;
+            margin: em 0 0 4em;
         }
 
         h1{
             font-size: 3em;
-            margin-top: 5px;
+            margin-top: .1em;
             text-transform: uppercase;
 
-
             @include desktop{
-                widows: 20%;
+                width: 20%;
                 font-size: 4em;
                 line-height: .9em;;
             }
@@ -206,6 +192,32 @@ main{
                 display: inline-block;
                 padding: $padding $padding * 4;
             }
+           
         }
-    }
+        div#skill{
+            color:color(primary-dark);
+            border-radius: $borders;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-color: color(accent);
+            display: block;
+            text-align: left;
+            margin: 5px auto 0 auto;
+            padding: $padding;
+            width: 32%;
+            h3{
+                padding: 0;
+            }
+            ul{
+                list-style-type: circle;
+            }
+            @include desktop{
+                display: inline-block;
+                padding: 15px;
+                
+            }
+           
+        }
+       }  
+    
 }
