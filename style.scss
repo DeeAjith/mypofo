@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 $colors:(
     // primary:#005dff,
     primary:#ff7f33,
@@ -155,4 +156,8 @@ main{
             }
         }
     }
+}
+::selection{
+    color:#fff;
+    background-color:#f26430;
 }
