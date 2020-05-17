@@ -1,7 +1,9 @@
 $colors:(
     primary:#ff7f33,
     primary-light:lighten(#ff7f33, 20%),
+    primary-light1:lighten(#ff7f33, 35%),
     primary-dark:darken(#ff7f33, 40%),
+    primary-dark1:darken(#ff7f33, 25%),
     accent:#fbf7dd
 );
 $borders:15px;
@@ -61,22 +63,36 @@ body{
 }
 
 main{
- 
     @include desktop{
+        section.flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+        }
         display: grid;
         grid-template-columns:50% 50%;
+        justify-content: center;
         grid-template-areas:
         "primary card"
         "secondary card2";
     }
     section#cardInfo{
-        background-color: #fff;
+        background-color: color(primary-light1);
         padding:10px;
         margin: 1em auto;
         border-radius:$borders;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        // box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         width:auto;
-        
+        h2{
+            margin-top: .5rem;
+            margin-bottom: 0;
+        }
+        hr{
+            border: .2px solid #b0b0b03d;
+            width: 10rem;
+            float: left;    
+        }
         @include desktop{
             grid-area:card2;
             align-content: center;
@@ -89,7 +105,8 @@ main{
                 font-weight: 450;
                 padding: 5px;
                 a{
-                    padding: 5px;margin:0;
+                    padding: 5px;
+                    margin:0;
                     text-decoration: none;
                     color: color(primary-dark);
                     transform: translateX(0px);
@@ -128,16 +145,17 @@ main{
             li{
                 margin-bottom:10px;
                 div.dp{
-                    margin:0 auto;
-                    align-content: center;
-                    background: url("assets/images/dp.jpg") no-repeat;
-                    background-size: contain;
-                    border-radius: 50%;
-                    width: 150px;
-                    height: 150px;
-                    @include desktop{
-                        width: 250px;
-                        height:250px;
+                    display: flex;
+                    justify-content: center;
+                    img{
+                        border-radius: 50%;
+                        width: 10rem;
+                        height: 10rem;
+                        
+                        @include desktop{
+                            width: 15rem;
+                            height:15rem;
+                        }
                     }
                 }
                 strong{
@@ -170,9 +188,39 @@ main{
             }
         }
         p{
-            font-size: 1.4em;  
+            font-size: 1.4em;
+            font-weight: 400;  
             @include desktop{
+                font-weight: 400;  
                 font-size: 2;
+            }
+        }
+        div.footer{
+            padding: .3em;
+            // background-color: color(primary-dark1);
+            background-color:color(accent);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            margin-top: 5px;
+            // border-radius: $borders $borders 0 0;
+            div.ftxt{
+                font-size: .8em;
+                margin: 0em;
+                padding: 0;
+                text-align: start;
+                color: color(primary-dark);
+            }
+            // display: none;
+            @include desktop{
+            background-color: #fff;
+
+                border-radius: 0 $borders 0 0;
+                display: block;
+                position: absolute;
+                margin-top: .25em;
+                bottom:0;
+                left: 0;
+                width: 30vw;
+        
             }
         }
         a{
@@ -189,6 +237,7 @@ main{
 
 
             @include desktop{
+                margin: 0 4px 0 auto;
                 display: inline-block;
                 padding: $padding $padding * 4;
             }
@@ -218,6 +267,33 @@ main{
             }
            
         }
-       }  
-    
+       }     
+}
+div.footer{
+    padding: .3em;
+    text-align: center;
+    // background-color: color(primary-dark1);
+    background-color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    margin-top: 5px;
+    // border-radius: $borders $borders 0 0;
+    div.ftxt{
+        font-size: .8em;
+        margin: 0em;
+        padding: 0;
+        text-align: start;
+        color: color(primary-dark);
+    }
+    // display: none;
+    @include desktop{
+        background: transparent;
+        border-radius: 0 $borders 0 0;
+        display: block;
+        position: absolute;
+        margin-top: .25em;
+        bottom:0;
+        left: 0;
+        width: 30vw;
+
+    }
 }
