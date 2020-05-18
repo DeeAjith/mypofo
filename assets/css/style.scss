@@ -63,6 +63,9 @@ body{
 }
 
 main{
+    section.flex{
+        width: 100vw;
+    }
     @include desktop{
         section.flex{
             display: flex;
@@ -70,13 +73,13 @@ main{
             align-items: center;
             width: 100vw;
         }
-        display: grid;
+    }
+    display: grid;
         grid-template-columns:50% 50%;
         justify-content: center;
         grid-template-areas:
         "primary card"
         "secondary card2";
-    }
     section#cardInfo{
         display: flex;
         flex-direction: column;
