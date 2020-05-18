@@ -65,17 +65,22 @@ body header a {
   text-transform: uppercase;
 }
 
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+      grid-template-areas: "primary card" "secondary card2";
+}
+
+main section.flex {
+  width: 100vw;
+}
+
 @media (min-width: 840px) {
-  main {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-        grid-template-areas: "primary card" "secondary card2";
-  }
   main section.flex {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -133,6 +138,8 @@ main section#cardInfo hr {
 
 @media (min-width: 840px) {
   main section#cardInfo {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
     grid-area: card2;
     -ms-flex-line-pack: center;
         align-content: center;
@@ -183,6 +190,8 @@ main section#card {
 
 @media (min-width: 840px) {
   main section#card {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
     grid-area: card;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -239,6 +248,8 @@ main section#primary {
 
 @media (min-width: 840px) {
   main section#primary {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
     grid-area: primary;
     text-align: left;
     margin: em 0 0 4em;
